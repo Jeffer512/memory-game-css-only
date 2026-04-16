@@ -1,4 +1,6 @@
 
+/* Disables interaction on correctly matched cards to keep them face-up */
+
 #card1:checked+#card2:checked~.boxes .selector1,
 #card1:checked+#card2:checked~.boxes .selector2,
 #card3:checked+#card4:checked~.boxes .selector3,
@@ -18,8 +20,9 @@
   pointer-events: none;
 }
 
-/* Card1 */
+/* If two non-matching cards are flipped, disable all other cards to prevent a third selection */
 
+/* card1 is one of the two flipped cards */
 #card1:checked~#card2:not(:checked)~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(1)):not(:nth-of-type(3)),
 #card1:checked~#card2:not(:checked)~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(1)):not(:nth-of-type(4)),
 #card1:checked~#card2:not(:checked)~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(1)):not(:nth-of-type(5)),
@@ -35,7 +38,7 @@
 #card1:checked~#card2:not(:checked)~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(1)):not(:nth-of-type(15)),
 #card1:checked~#card2:not(:checked)~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(1)):not(:nth-of-type(16)),
 
-/* card2 */
+/* card2 is one of the two flipped cards */
 #card1:not(:checked)~#card2:checked~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(2)):not(:nth-of-type(3)),
 #card1:not(:checked)~#card2:checked~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(2)):not(:nth-of-type(4)),
 #card1:not(:checked)~#card2:checked~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(2)):not(:nth-of-type(5)),
@@ -51,9 +54,7 @@
 #card1:not(:checked)~#card2:checked~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(2)):not(:nth-of-type(15)),
 #card1:not(:checked)~#card2:checked~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(2)):not(:nth-of-type(16)),
 
-/* card3 */
-#card1:checked~#card2:not(:checked)~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(3)):not(:nth-of-type(1)),
-#card1:not(:checked)~#card2:checked~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(3)):not(:nth-of-type(2)),
+/* card3 is one of the two flipped cards */
 #card3:checked~#card4:not(:checked)~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(3)):not(:nth-of-type(5)),
 #card3:checked~#card4:not(:checked)~#card5:not(:checked)~#card6:checked~.boxes label:not(:nth-of-type(3)):not(:nth-of-type(6)),
 #card3:checked~#card4:not(:checked)~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(3)):not(:nth-of-type(7)),
@@ -67,9 +68,7 @@
 #card3:checked~#card4:not(:checked)~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(3)):not(:nth-of-type(15)),
 #card3:checked~#card4:not(:checked)~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(3)):not(:nth-of-type(16)),
 
-/* card4 */
-#card1:checked~#card2:not(:checked)~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(4)):not(:nth-of-type(1)),
-#card1:not(:checked)~#card2:checked~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(4)):not(:nth-of-type(2)),
+/* card4 is one of the two flipped cards */
 #card3:not(:checked)~#card4:checked~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(4)):not(:nth-of-type(5)),
 #card3:not(:checked)~#card4:checked~#card5:not(:checked)~#card6:checked~.boxes label:not(:nth-of-type(4)):not(:nth-of-type(6)),
 #card3:not(:checked)~#card4:checked~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(4)):not(:nth-of-type(7)),
@@ -83,11 +82,7 @@
 #card3:not(:checked)~#card4:checked~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(4)):not(:nth-of-type(15)),
 #card3:not(:checked)~#card4:checked~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(4)):not(:nth-of-type(16)),
 
-/* card5 */
-#card1:checked~#card2:not(:checked)~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(5)):not(:nth-of-type(1)),
-#card1:not(:checked)~#card2:checked~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(5)):not(:nth-of-type(2)),
-#card5:checked~#card6:not(:checked)~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(5)):not(:nth-of-type(3)),
-#card5:checked~#card6:not(:checked)~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(5)):not(:nth-of-type(4)),
+/* card5 is one of the two flipped cards */
 #card5:checked~#card6:not(:checked)~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(5)):not(:nth-of-type(7)),
 #card5:checked~#card6:not(:checked)~#card7:not(:checked)~#card8:checked~.boxes label:not(:nth-of-type(5)):not(:nth-of-type(8)),
 #card5:checked~#card6:not(:checked)~#card9:checked~#card10:not(:checked)~.boxes label:not(:nth-of-type(5)):not(:nth-of-type(9)),
@@ -99,11 +94,7 @@
 #card5:checked~#card6:not(:checked)~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(5)):not(:nth-of-type(15)),
 #card5:checked~#card6:not(:checked)~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(5)):not(:nth-of-type(16)),
 
-/* card6 */
-#card5:not(:checked)~#card6:checked~#card1:checked~#card2:not(:checked)~.boxes label:not(:nth-of-type(6)):not(:nth-of-type(1)),
-#card5:not(:checked)~#card6:checked~#card1:not(:checked)~#card2:checked~.boxes label:not(:nth-of-type(6)):not(:nth-of-type(2)),
-#card5:not(:checked)~#card6:checked~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(6)):not(:nth-of-type(3)),
-#card5:not(:checked)~#card6:checked~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(6)):not(:nth-of-type(4)),
+/* card6 is one of the two flipped cards */
 #card5:not(:checked)~#card6:checked~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(6)):not(:nth-of-type(7)),
 #card5:not(:checked)~#card6:checked~#card7:not(:checked)~#card8:checked~.boxes label:not(:nth-of-type(6)):not(:nth-of-type(8)),
 #card5:not(:checked)~#card6:checked~#card9:checked~#card10:not(:checked)~.boxes label:not(:nth-of-type(6)):not(:nth-of-type(9)),
@@ -115,13 +106,7 @@
 #card5:not(:checked)~#card6:checked~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(6)):not(:nth-of-type(15)),
 #card5:not(:checked)~#card6:checked~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(6)):not(:nth-of-type(16)),
 
-/* Card 7*/
-#card1:checked~#card2:not(:checked)~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(7)):not(:nth-of-type(1)),
-#card1:not(:checked)~#card2:checked~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(7)):not(:nth-of-type(2)),
-#card7:checked~#card8:not(:checked)~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(7)):not(:nth-of-type(3)),
-#card7:checked~#card8:not(:checked)~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(7)):not(:nth-of-type(4)),
-#card7:checked~#card8:not(:checked)~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(7)):not(:nth-of-type(5)),
-#card7:checked~#card8:not(:checked)~#card5:not(:checked)~#card6:checked~.boxes label:not(:nth-of-type(7)):not(:nth-of-type(6)),
+/* card7 is one of the two flipped cards */
 #card7:checked~#card8:not(:checked)~#card9:checked~#card10:not(:checked)~.boxes label:not(:nth-of-type(7)):not(:nth-of-type(9)),
 #card7:checked~#card8:not(:checked)~#card9:not(:checked)~#card10:checked~.boxes label:not(:nth-of-type(7)):not(:nth-of-type(10)),
 #card7:checked~#card8:not(:checked)~#card11:checked~#card12:not(:checked)~.boxes label:not(:nth-of-type(7)):not(:nth-of-type(11)),
@@ -131,13 +116,7 @@
 #card7:checked~#card8:not(:checked)~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(7)):not(:nth-of-type(15)),
 #card7:checked~#card8:not(:checked)~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(7)):not(:nth-of-type(16)),
 
-/* card8 */
-#card7:not(:checked)~#card8:checked~#card1:checked~#card2:not(:checked)~.boxes label:not(:nth-of-type(8)):not(:nth-of-type(1)),
-#card7:not(:checked)~#card8:checked~#card1:not(:checked)~#card2:checked~.boxes label:not(:nth-of-type(8)):not(:nth-of-type(2)),
-#card7:not(:checked)~#card8:checked~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(8)):not(:nth-of-type(3)),
-#card7:not(:checked)~#card8:checked~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(8)):not(:nth-of-type(4)),
-#card7:not(:checked)~#card8:checked~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(8)):not(:nth-of-type(5)),
-#card7:not(:checked)~#card8:checked~#card5:not(:checked)~#card6:checked~.boxes label:not(:nth-of-type(8)):not(:nth-of-type(6)),
+/* card8 is one of the two flipped cards */
 #card7:not(:checked)~#card8:checked~#card9:checked~#card10:not(:checked)~.boxes label:not(:nth-of-type(8)):not(:nth-of-type(9)),
 #card7:not(:checked)~#card8:checked~#card9:not(:checked)~#card10:checked~.boxes label:not(:nth-of-type(8)):not(:nth-of-type(10)),
 #card7:not(:checked)~#card8:checked~#card11:checked~#card12:not(:checked)~.boxes label:not(:nth-of-type(8)):not(:nth-of-type(11)),
@@ -147,15 +126,7 @@
 #card7:not(:checked)~#card8:checked~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(8)):not(:nth-of-type(15)),
 #card7:not(:checked)~#card8:checked~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(8)):not(:nth-of-type(16)),
 
-/* card9 */
-#card9:checked~#card10:not(:checked)~#card1:checked~#card2:not(:checked)~.boxes label:not(:nth-of-type(9)):not(:nth-of-type(1)),
-#card9:checked~#card10:not(:checked)~#card1:not(:checked)~#card2:checked~.boxes label:not(:nth-of-type(9)):not(:nth-of-type(2)),
-#card9:checked~#card10:not(:checked)~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(9)):not(:nth-of-type(3)),
-#card9:checked~#card10:not(:checked)~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(9)):not(:nth-of-type(4)),
-#card9:checked~#card10:not(:checked)~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(9)):not(:nth-of-type(5)),
-#card9:checked~#card10:not(:checked)~#card5:not(:checked)~#card6:checked~.boxes label:not(:nth-of-type(9)):not(:nth-of-type(6)),
-#card9:checked~#card10:not(:checked)~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(9)):not(:nth-of-type(7)),
-#card9:checked~#card10:not(:checked)~#card7:not(:checked)~#card8:checked~.boxes label:not(:nth-of-type(9)):not(:nth-of-type(8)),
+/* card9 is one of the two flipped cards */
 #card9:checked~#card10:not(:checked)~#card11:checked~#card12:not(:checked)~.boxes label:not(:nth-of-type(9)):not(:nth-of-type(11)),
 #card9:checked~#card10:not(:checked)~#card11:not(:checked)~#card12:checked~.boxes label:not(:nth-of-type(9)):not(:nth-of-type(12)),
 #card9:checked~#card10:not(:checked)~#card13:checked~#card14:not(:checked)~.boxes label:not(:nth-of-type(9)):not(:nth-of-type(13)),
@@ -163,15 +134,7 @@
 #card9:checked~#card10:not(:checked)~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(9)):not(:nth-of-type(15)),
 #card9:checked~#card10:not(:checked)~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(9)):not(:nth-of-type(16)),
 
-/* card10 */
-#card9:not(:checked)~#card10:checked~#card1:checked~#card2:not(:checked)~.boxes label:not(:nth-of-type(10)):not(:nth-of-type(1)),
-#card9:not(:checked)~#card10:checked~#card1:not(:checked)~#card2:checked~.boxes label:not(:nth-of-type(10)):not(:nth-of-type(2)),
-#card9:not(:checked)~#card10:checked~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(10)):not(:nth-of-type(3)),
-#card9:not(:checked)~#card10:checked~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(10)):not(:nth-of-type(4)),
-#card9:not(:checked)~#card10:checked~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(10)):not(:nth-of-type(5)),
-#card9:not(:checked)~#card10:checked~#card5:not(:checked)~#card6:checked~.boxes label:not(:nth-of-type(10)):not(:nth-of-type(6)),
-#card9:not(:checked)~#card10:checked~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(10)):not(:nth-of-type(7)),
-#card9:not(:checked)~#card10:checked~#card7:not(:checked)~#card8:checked~.boxes label:not(:nth-of-type(10)):not(:nth-of-type(8)),
+/* card10 is one of the two flipped cards */
 #card9:not(:checked)~#card10:checked~#card11:checked~#card12:not(:checked)~.boxes label:not(:nth-of-type(10)):not(:nth-of-type(11)),
 #card9:not(:checked)~#card10:checked~#card11:not(:checked)~#card12:checked~.boxes label:not(:nth-of-type(10)):not(:nth-of-type(12)),
 #card9:not(:checked)~#card10:checked~#card13:checked~#card14:not(:checked)~.boxes label:not(:nth-of-type(10)):not(:nth-of-type(13)),
@@ -179,105 +142,30 @@
 #card9:not(:checked)~#card10:checked~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(10)):not(:nth-of-type(15)),
 #card9:not(:checked)~#card10:checked~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(10)):not(:nth-of-type(16)),
 
-/* card11 */
-#card11:checked~#card12:not(:checked)~#card1:checked~#card2:not(:checked)~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(1)),
-#card11:checked~#card12:not(:checked)~#card1:not(:checked)~#card2:checked~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(2)),
-#card11:checked~#card12:not(:checked)~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(3)),
-#card11:checked~#card12:not(:checked)~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(4)),
-#card11:checked~#card12:not(:checked)~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(5)),
-#card11:checked~#card12:not(:checked)~#card5:not(:checked)~#card6:checked~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(6)),
-#card11:checked~#card12:not(:checked)~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(7)),
-#card11:checked~#card12:not(:checked)~#card7:not(:checked)~#card8:checked~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(8)),
-#card11:checked~#card12:not(:checked)~#card9:checked~#card10:not(:checked)~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(9)),
-#card11:checked~#card12:not(:checked)~#card9:not(:checked)~#card10:checked~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(10)),
+/* card11 is one of the two flipped cards */
 #card11:checked~#card12:not(:checked)~#card13:checked~#card14:not(:checked)~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(13)),
 #card11:checked~#card12:not(:checked)~#card13:not(:checked)~#card14:checked~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(14)),
 #card11:checked~#card12:not(:checked)~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(15)),
 #card11:checked~#card12:not(:checked)~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(11)):not(:nth-of-type(16)),
 
-/* card12 */
-#card11:not(:checked)~#card12:checked~#card1:checked~#card2:not(:checked)~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(1)),
-#card11:not(:checked)~#card12:checked~#card1:not(:checked)~#card2:checked~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(2)),
-#card11:not(:checked)~#card12:checked~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(3)),
-#card11:not(:checked)~#card12:checked~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(4)),
-#card11:not(:checked)~#card12:checked~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(5)),
-#card11:not(:checked)~#card12:checked~#card5:not(:checked)~#card6:checked~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(6)),
-#card11:not(:checked)~#card12:checked~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(7)),
-#card11:not(:checked)~#card12:checked~#card7:not(:checked)~#card8:checked~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(8)),
-#card11:not(:checked)~#card12:checked~#card9:checked~#card10:not(:checked)~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(9)),
-#card11:not(:checked)~#card12:checked~#card9:not(:checked)~#card10:checked~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(10)),
+/* card12 is one of the two flipped cards */
 #card11:not(:checked)~#card12:checked~#card13:checked~#card14:not(:checked)~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(13)),
 #card11:not(:checked)~#card12:checked~#card13:not(:checked)~#card14:checked~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(14)),
 #card11:not(:checked)~#card12:checked~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(15)),
 #card11:not(:checked)~#card12:checked~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(12)):not(:nth-of-type(16)),
 
-/* card13 */
-#card13:checked~#card14:not(:checked)~#card1:checked~#card2:not(:checked)~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(1)),
-#card13:checked~#card14:not(:checked)~#card1:not(:checked)~#card2:checked~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(2)),
-#card13:checked~#card14:not(:checked)~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(3)),
-#card13:checked~#card14:not(:checked)~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(4)),
-#card13:checked~#card14:not(:checked)~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(5)),
-#card13:checked~#card14:not(:checked)~#card5:not(:checked)~#card6:checked~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(6)),
-#card13:checked~#card14:not(:checked)~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(7)),
-#card13:checked~#card14:not(:checked)~#card7:not(:checked)~#card8:checked~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(8)),
-#card13:checked~#card14:not(:checked)~#card9:checked~#card10:not(:checked)~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(9)),
-#card13:checked~#card14:not(:checked)~#card9:not(:checked)~#card10:checked~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(10)),
-#card13:checked~#card14:not(:checked)~#card11:checked~#card12:not(:checked)~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(11)),
-#card13:checked~#card14:not(:checked)~#card11:not(:checked)~#card12:checked~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(12)),
+/* card13 is one of the two flipped cards */
 #card13:checked~#card14:not(:checked)~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(15)),
 #card13:checked~#card14:not(:checked)~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(13)):not(:nth-of-type(16)),
 
-/* card14 */
-#card13:not(:checked)~#card14:checked~#card1:checked~#card2:not(:checked)~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(1)),
-#card13:not(:checked)~#card14:checked~#card1:not(:checked)~#card2:checked~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(2)),
-#card13:not(:checked)~#card14:checked~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(3)),
-#card13:not(:checked)~#card14:checked~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(4)),
-#card13:not(:checked)~#card14:checked~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(5)),
-#card13:not(:checked)~#card14:checked~#card5:not(:checked)~#card6:checked~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(6)),
-#card13:not(:checked)~#card14:checked~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(7)),
-#card13:not(:checked)~#card14:checked~#card7:not(:checked)~#card8:checked~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(8)),
-#card13:not(:checked)~#card14:checked~#card9:checked~#card10:not(:checked)~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(9)),
-#card13:not(:checked)~#card14:checked~#card9:not(:checked)~#card10:checked~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(10)),
-#card13:not(:checked)~#card14:checked~#card11:checked~#card12:not(:checked)~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(11)),
-#card13:not(:checked)~#card14:checked~#card11:not(:checked)~#card12:checked~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(12)),
+/* card14 is one of the two flipped cards */
+/* All other cases already handled by previous blocks */
 #card13:not(:checked)~#card14:checked~#card15:checked~#card16:not(:checked)~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(15)),
-#card13:not(:checked)~#card14:checked~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(16)),
-
-/* card15 */
-#card15:checked~#card16:not(:checked)~#card1:checked~#card2:not(:checked)~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(1)),
-#card15:checked~#card16:not(:checked)~#card1:not(:checked)~#card2:checked~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(2)),
-#card15:checked~#card16:not(:checked)~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(3)),
-#card15:checked~#card16:not(:checked)~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(4)),
-#card15:checked~#card16:not(:checked)~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(5)),
-#card15:checked~#card16:not(:checked)~#card5:not(:checked)~#card6:checked~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(6)),
-#card15:checked~#card16:not(:checked)~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(7)),
-#card15:checked~#card16:not(:checked)~#card7:not(:checked)~#card8:checked~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(8)),
-#card15:checked~#card16:not(:checked)~#card9:checked~#card10:not(:checked)~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(9)),
-#card15:checked~#card16:not(:checked)~#card9:not(:checked)~#card10:checked~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(10)),
-#card15:checked~#card16:not(:checked)~#card11:checked~#card12:not(:checked)~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(11)),
-#card15:checked~#card16:not(:checked)~#card11:not(:checked)~#card12:checked~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(12)),
-#card15:checked~#card16:not(:checked)~#card13:checked~#card14:not(:checked)~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(13)),
-#card15:checked~#card16:not(:checked)~#card13:not(:checked)~#card14:checked~.boxes label:not(:nth-of-type(15)):not(:nth-of-type(14)),
-
-/* card16 */
-#card15:not(:checked)~#card16:checked~#card1:checked~#card2:not(:checked)~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(1)),
-#card15:not(:checked)~#card16:checked~#card1:not(:checked)~#card2:checked~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(2)),
-#card15:not(:checked)~#card16:checked~#card3:checked~#card4:not(:checked)~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(3)),
-#card15:not(:checked)~#card16:checked~#card3:not(:checked)~#card4:checked~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(4)),
-#card15:not(:checked)~#card16:checked~#card5:checked~#card6:not(:checked)~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(5)),
-#card15:not(:checked)~#card16:checked~#card5:not(:checked)~#card6:checked~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(6)),
-#card15:not(:checked)~#card16:checked~#card7:checked~#card8:not(:checked)~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(7)),
-#card15:not(:checked)~#card16:checked~#card7:not(:checked)~#card8:checked~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(8)),
-#card15:not(:checked)~#card16:checked~#card9:checked~#card10:not(:checked)~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(9)),
-#card15:not(:checked)~#card16:checked~#card9:not(:checked)~#card10:checked~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(10)),
-#card15:not(:checked)~#card16:checked~#card11:checked~#card12:not(:checked)~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(11)),
-#card15:not(:checked)~#card16:checked~#card11:not(:checked)~#card12:checked~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(12)),
-#card15:not(:checked)~#card16:checked~#card13:checked~#card14:not(:checked)~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(13)),
-#card15:not(:checked)~#card16:checked~#card13:not(:checked)~#card14:checked~.boxes label:not(:nth-of-type(16)):not(:nth-of-type(14)){
+#card13:not(:checked)~#card14:checked~#card15:not(:checked)~#card16:checked~.boxes label:not(:nth-of-type(14)):not(:nth-of-type(16)){
   pointer-events: none;
 }
 
-/* win */
+/* Hide and disable all cards once every single pair has been successfully matched */
 #card1:checked+#card2:checked+#card3:checked+#card4:checked+#card5:checked+#card6:checked+#card7:checked+#card8:checked+#card9:checked+#card10:checked+#card11:checked+#card12:checked+#card13:checked+#card14:checked+#card15:checked+#card16:checked~.boxes label{
   pointer-events: none;
   visibility: hidden;

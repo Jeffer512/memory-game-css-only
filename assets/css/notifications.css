@@ -9,7 +9,7 @@
 @media screen and (max-width: 500px) {
   .error-notification {
     top: 20%;
-    /* width: 120vw; */
+    width: 120vw;
   }
 }
 
@@ -30,8 +30,9 @@
   border: 3px solid #0b3d6b;
 }
 
-/* Diferent cards selectd*/
-/* card1 */
+/* If two non-matching cards are flipped, show error notification */
+
+/* card1 is one of the two flipped cards */
 #card1:checked~#card2:not(:checked)~#card3:checked~#card4:not(:checked)~.error-notification,
 #card1:checked~#card2:not(:checked)~#card3:not(:checked)~#card4:checked~.error-notification,
 #card1:checked~#card2:not(:checked)~#card5:checked~#card6:not(:checked)~.error-notification,
@@ -47,7 +48,7 @@
 #card1:checked~#card2:not(:checked)~#card15:checked~#card16:not(:checked)~.error-notification,
 #card1:checked~#card2:not(:checked)~#card15:not(:checked)~#card16:checked~.error-notification,
 
-/* card2 */
+/* card2 is one of the two flipped cards */
 #card1:not(:checked)~#card2:checked~#card3:checked~#card4:not(:checked)~.error-notification,
 #card1:not(:checked)~#card2:checked~#card3:not(:checked)~#card4:checked~.error-notification,
 #card1:not(:checked)~#card2:checked~#card5:checked~#card6:not(:checked)~.error-notification,
@@ -63,9 +64,7 @@
 #card1:not(:checked)~#card2:checked~#card15:checked~#card16:not(:checked)~.error-notification,
 #card1:not(:checked)~#card2:checked~#card15:not(:checked)~#card16:checked~.error-notification,
 
-/* card3 */
-#card1:checked~#card2:not(:checked)~#card3:checked~#card4:not(:checked)~.error-notification,
-#card1:not(:checked)~#card2:checked~#card3:checked~#card4:not(:checked)~.error-notification,
+/* card3 is one of the two flipped cards */
 #card3:checked~#card4:not(:checked)~#card5:checked~#card6:not(:checked)~.error-notification,
 #card3:checked~#card4:not(:checked)~#card5:checked~#card6:not(:checked)~.error-notification,
 #card3:checked~#card4:not(:checked)~#card5:not(:checked)~#card6:checked~.error-notification,
@@ -80,9 +79,7 @@
 #card3:checked~#card4:not(:checked)~#card15:checked~#card16:not(:checked)~.error-notification,
 #card3:checked~#card4:not(:checked)~#card15:not(:checked)~#card16:checked~.error-notification,
 
-/* card4 */
-#card1:checked~#card2:not(:checked)~#card3:not(:checked)~#card4:checked~.error-notification,
-#card1:not(:checked)~#card2:checked~#card3:not(:checked)~#card4:checked~.error-notification,
+/* card4 is one of the two flipped cards */
 #card3:not(:checked)~#card4:checked~#card5:checked~#card6:not(:checked)~.error-notification,
 #card3:not(:checked)~#card4:checked~#card5:not(:checked)~#card6:checked~.error-notification,
 #card3:not(:checked)~#card4:checked~#card7:checked~#card8:not(:checked)~.error-notification,
@@ -96,11 +93,7 @@
 #card3:not(:checked)~#card4:checked~#card15:checked~#card16:not(:checked)~.error-notification,
 #card3:not(:checked)~#card4:checked~#card15:not(:checked)~#card16:checked~.error-notification,
 
-/* card5 */
-#card1:checked~#card2:not(:checked)~#card5:checked~#card6:not(:checked)~.error-notification,
-#card1:not(:checked)~#card2:checked~#card5:checked~#card6:not(:checked)~.error-notification,
-#card5:checked~#card6:not(:checked)~#card3:checked~#card4:not(:checked)~.error-notification,
-#card5:checked~#card6:not(:checked)~#card3:not(:checked)~#card4:checked~.error-notification,
+/* card5 is one of the two flipped cards */
 #card5:checked~#card6:not(:checked)~#card7:checked~#card8:not(:checked)~.error-notification,
 #card5:checked~#card6:not(:checked)~#card7:not(:checked)~#card8:checked~.error-notification,
 #card5:checked~#card6:not(:checked)~#card9:checked~#card10:not(:checked)~.error-notification,
@@ -112,11 +105,7 @@
 #card5:checked~#card6:not(:checked)~#card15:checked~#card16:not(:checked)~.error-notification,
 #card5:checked~#card6:not(:checked)~#card15:not(:checked)~#card16:checked~.error-notification,
 
-/* card6 */
-#card5:not(:checked)~#card6:checked~#card1:checked~#card2:not(:checked)~.error-notification,
-#card5:not(:checked)~#card6:checked~#card1:not(:checked)~#card2:checked~.error-notification,
-#card5:not(:checked)~#card6:checked~#card3:checked~#card4:not(:checked)~.error-notification,
-#card5:not(:checked)~#card6:checked~#card3:not(:checked)~#card4:checked~.error-notification,
+/* card6 is one of the two flipped cards */
 #card5:not(:checked)~#card6:checked~#card7:checked~#card8:not(:checked)~.error-notification,
 #card5:not(:checked)~#card6:checked~#card7:not(:checked)~#card8:checked~.error-notification,
 #card5:not(:checked)~#card6:checked~#card9:checked~#card10:not(:checked)~.error-notification,
@@ -128,13 +117,7 @@
 #card5:not(:checked)~#card6:checked~#card15:checked~#card16:not(:checked)~.error-notification,
 #card5:not(:checked)~#card6:checked~#card15:not(:checked)~#card16:checked~.error-notification,
 
-/* Card 7*/
-#card1:checked~#card2:not(:checked)~#card7:checked~#card8:not(:checked)~.error-notification,
-#card1:not(:checked)~#card2:checked~#card7:checked~#card8:not(:checked)~.error-notification,
-#card7:checked~#card8:not(:checked)~#card3:checked~#card4:not(:checked)~.error-notification,
-#card7:checked~#card8:not(:checked)~#card3:not(:checked)~#card4:checked~.error-notification,
-#card7:checked~#card8:not(:checked)~#card5:checked~#card6:not(:checked)~.error-notification,
-#card7:checked~#card8:not(:checked)~#card5:not(:checked)~#card6:checked~.error-notification,
+/* card7 is one of the two flipped cards */
 #card7:checked~#card8:not(:checked)~#card9:checked~#card10:not(:checked)~.error-notification,
 #card7:checked~#card8:not(:checked)~#card9:not(:checked)~#card10:checked~.error-notification,
 #card7:checked~#card8:not(:checked)~#card11:checked~#card12:not(:checked)~.error-notification,
@@ -144,13 +127,7 @@
 #card7:checked~#card8:not(:checked)~#card15:checked~#card16:not(:checked)~.error-notification,
 #card7:checked~#card8:not(:checked)~#card15:not(:checked)~#card16:checked~.error-notification,
 
-/* card8 */
-#card7:not(:checked)~#card8:checked~#card1:checked~#card2:not(:checked)~.error-notification,
-#card7:not(:checked)~#card8:checked~#card1:not(:checked)~#card2:checked~.error-notification,
-#card7:not(:checked)~#card8:checked~#card3:checked~#card4:not(:checked)~.error-notification,
-#card7:not(:checked)~#card8:checked~#card3:not(:checked)~#card4:checked~.error-notification,
-#card7:not(:checked)~#card8:checked~#card5:checked~#card6:not(:checked)~.error-notification,
-#card7:not(:checked)~#card8:checked~#card5:not(:checked)~#card6:checked~.error-notification,
+/* card8 is one of the two flipped cards */
 #card7:not(:checked)~#card8:checked~#card9:checked~#card10:not(:checked)~.error-notification,
 #card7:not(:checked)~#card8:checked~#card9:not(:checked)~#card10:checked~.error-notification,
 #card7:not(:checked)~#card8:checked~#card11:checked~#card12:not(:checked)~.error-notification,
@@ -160,15 +137,7 @@
 #card7:not(:checked)~#card8:checked~#card15:checked~#card16:not(:checked)~.error-notification,
 #card7:not(:checked)~#card8:checked~#card15:not(:checked)~#card16:checked~.error-notification,
 
-/* card9 */
-#card9:checked~#card10:not(:checked)~#card1:checked~#card2:not(:checked)~.error-notification,
-#card9:checked~#card10:not(:checked)~#card1:not(:checked)~#card2:checked~.error-notification,
-#card9:checked~#card10:not(:checked)~#card3:checked~#card4:not(:checked)~.error-notification,
-#card9:checked~#card10:not(:checked)~#card3:not(:checked)~#card4:checked~.error-notification,
-#card9:checked~#card10:not(:checked)~#card5:checked~#card6:not(:checked)~.error-notification,
-#card9:checked~#card10:not(:checked)~#card5:not(:checked)~#card6:checked~.error-notification,
-#card9:checked~#card10:not(:checked)~#card7:checked~#card8:not(:checked)~.error-notification,
-#card9:checked~#card10:not(:checked)~#card7:not(:checked)~#card8:checked~.error-notification,
+/* card9 is one of the two flipped cards */
 #card9:checked~#card10:not(:checked)~#card11:checked~#card12:not(:checked)~.error-notification,
 #card9:checked~#card10:not(:checked)~#card11:not(:checked)~#card12:checked~.error-notification,
 #card9:checked~#card10:not(:checked)~#card13:checked~#card14:not(:checked)~.error-notification,
@@ -176,15 +145,7 @@
 #card9:checked~#card10:not(:checked)~#card15:checked~#card16:not(:checked)~.error-notification,
 #card9:checked~#card10:not(:checked)~#card15:not(:checked)~#card16:checked~.error-notification,
 
-/* card10 */
-#card9:not(:checked)~#card10:checked~#card1:checked~#card2:not(:checked)~.error-notification,
-#card9:not(:checked)~#card10:checked~#card1:not(:checked)~#card2:checked~.error-notification,
-#card9:not(:checked)~#card10:checked~#card3:checked~#card4:not(:checked)~.error-notification,
-#card9:not(:checked)~#card10:checked~#card3:not(:checked)~#card4:checked~.error-notification,
-#card9:not(:checked)~#card10:checked~#card5:checked~#card6:not(:checked)~.error-notification,
-#card9:not(:checked)~#card10:checked~#card5:not(:checked)~#card6:checked~.error-notification,
-#card9:not(:checked)~#card10:checked~#card7:checked~#card8:not(:checked)~.error-notification,
-#card9:not(:checked)~#card10:checked~#card7:not(:checked)~#card8:checked~.error-notification,
+/* card10 is one of the two flipped cards */
 #card9:not(:checked)~#card10:checked~#card11:checked~#card12:not(:checked)~.error-notification,
 #card9:not(:checked)~#card10:checked~#card11:not(:checked)~#card12:checked~.error-notification,
 #card9:not(:checked)~#card10:checked~#card13:checked~#card14:not(:checked)~.error-notification,
@@ -192,101 +153,25 @@
 #card9:not(:checked)~#card10:checked~#card15:checked~#card16:not(:checked)~.error-notification,
 #card9:not(:checked)~#card10:checked~#card15:not(:checked)~#card16:checked~.error-notification,
 
-/* card11 */
-#card11:checked~#card12:not(:checked)~#card1:not(:checked)~#card2:checked~.error-notification,
-#card11:checked~#card12:not(:checked)~#card1:checked~#card2:not(:checked)~.error-notification,
-#card11:checked~#card12:not(:checked)~#card3:checked~#card4:not(:checked)~.error-notification,
-#card11:checked~#card12:not(:checked)~#card3:not(:checked)~#card4:checked~.error-notification,
-#card11:checked~#card12:not(:checked)~#card5:checked~#card6:not(:checked)~.error-notification,
-#card11:checked~#card12:not(:checked)~#card5:not(:checked)~#card6:checked~.error-notification,
-#card11:checked~#card12:not(:checked)~#card7:checked~#card8:not(:checked)~.error-notification,
-#card11:checked~#card12:not(:checked)~#card7:not(:checked)~#card8:checked~.error-notification,
-#card11:checked~#card12:not(:checked)~#card9:checked~#card10:not(:checked)~.error-notification,
-#card11:checked~#card12:not(:checked)~#card9:not(:checked)~#card10:checked~.error-notification,
+/* card11 is one of the two flipped cards */
 #card11:checked~#card12:not(:checked)~#card13:checked~#card14:not(:checked)~.error-notification,
 #card11:checked~#card12:not(:checked)~#card13:not(:checked)~#card14:checked~.error-notification,
 #card11:checked~#card12:not(:checked)~#card15:checked~#card16:not(:checked)~.error-notification,
 #card11:checked~#card12:not(:checked)~#card15:not(:checked)~#card16:checked~.error-notification,
 
-/* card12 */
-#card11:not(:checked)~#card12:checked~#card1:checked~#card2:not(:checked)~.error-notification,
-#card11:not(:checked)~#card12:checked~#card1:not(:checked)~#card2:checked~.error-notification,
-#card11:not(:checked)~#card12:checked~#card3:checked~#card4:not(:checked)~.error-notification,
-#card11:not(:checked)~#card12:checked~#card3:not(:checked)~#card4:checked~.error-notification,
-#card11:not(:checked)~#card12:checked~#card5:checked~#card6:not(:checked)~.error-notification,
-#card11:not(:checked)~#card12:checked~#card5:not(:checked)~#card6:checked~.error-notification,
-#card11:not(:checked)~#card12:checked~#card7:checked~#card8:not(:checked)~.error-notification,
-#card11:not(:checked)~#card12:checked~#card7:not(:checked)~#card8:checked~.error-notification,
-#card11:not(:checked)~#card12:checked~#card9:checked~#card10:not(:checked)~.error-notification,
-#card11:not(:checked)~#card12:checked~#card9:not(:checked)~#card10:checked~.error-notification,
+/* card12 is one of the two flipped cards */
 #card11:not(:checked)~#card12:checked~#card13:checked~#card14:not(:checked)~.error-notification,
 #card11:not(:checked)~#card12:checked~#card13:not(:checked)~#card14:checked~.error-notification,
 #card11:not(:checked)~#card12:checked~#card15:checked~#card16:not(:checked)~.error-notification,
 #card11:not(:checked)~#card12:checked~#card15:not(:checked)~#card16:checked~.error-notification,
 
-/* card13 */
-#card13:checked~#card14:not(:checked)~#card1:checked~#card2:not(:checked)~.error-notification,
-#card13:checked~#card14:not(:checked)~#card1:not(:checked)~#card2:checked~.error-notification,
-#card13:checked~#card14:not(:checked)~#card3:checked~#card4:not(:checked)~.error-notification,
-#card13:checked~#card14:not(:checked)~#card3:not(:checked)~#card4:checked~.error-notification,
-#card13:checked~#card14:not(:checked)~#card5:checked~#card6:not(:checked)~.error-notification,
-#card13:checked~#card14:not(:checked)~#card5:not(:checked)~#card6:checked~.error-notification,
-#card13:checked~#card14:not(:checked)~#card7:checked~#card8:not(:checked)~.error-notification,
-#card13:checked~#card14:not(:checked)~#card7:not(:checked)~#card8:checked~.error-notification,
-#card13:checked~#card14:not(:checked)~#card9:checked~#card10:not(:checked)~.error-notification,
-#card13:checked~#card14:not(:checked)~#card9:not(:checked)~#card10:checked~.error-notification,
-#card13:checked~#card14:not(:checked)~#card11:checked~#card12:not(:checked)~.error-notification,
-#card13:checked~#card14:not(:checked)~#card11:not(:checked)~#card12:checked~.error-notification,
+/* card13 is one of the two flipped cards */
 #card13:checked~#card14:not(:checked)~#card15:checked~#card16:not(:checked)~.error-notification,
 #card13:checked~#card14:not(:checked)~#card15:not(:checked)~#card16:checked~.error-notification,
 
-/* card14 */
-#card13:not(:checked)~#card14:checked~#card1:checked~#card2:not(:checked)~.error-notification,
-#card13:not(:checked)~#card14:checked~#card1:not(:checked)~#card2:checked~.error-notification,
-#card13:not(:checked)~#card14:checked~#card3:checked~#card4:not(:checked)~.error-notification,
-#card13:not(:checked)~#card14:checked~#card3:not(:checked)~#card4:checked~.error-notification,
-#card13:not(:checked)~#card14:checked~#card5:checked~#card6:not(:checked)~.error-notification,
-#card13:not(:checked)~#card14:checked~#card5:not(:checked)~#card6:checked~.error-notification,
-#card13:not(:checked)~#card14:checked~#card7:checked~#card8:not(:checked)~.error-notification,
-#card13:not(:checked)~#card14:checked~#card7:not(:checked)~#card8:checked~.error-notification,
-#card13:not(:checked)~#card14:checked~#card9:checked~#card10:not(:checked)~.error-notification,
-#card13:not(:checked)~#card14:checked~#card9:not(:checked)~#card10:checked~.error-notification,
-#card13:not(:checked)~#card14:checked~#card11:checked~#card12:not(:checked)~.error-notification,
-#card13:not(:checked)~#card14:checked~#card11:not(:checked)~#card12:checked~.error-notification,
+/* card14 is one of the two flipped cards */
 #card13:not(:checked)~#card14:checked~#card15:checked~#card16:not(:checked)~.error-notification,
-#card13:not(:checked)~#card14:checked~#card15:not(:checked)~#card16:checked~.error-notification,
-
-/* card15 */
-#card15:checked~#card16:not(:checked)~#card1:checked~#card2:not(:checked)~.error-notification,
-#card15:checked~#card16:not(:checked)~#card1:not(:checked)~#card2:checked~.error-notification,
-#card15:checked~#card16:not(:checked)~#card3:checked~#card4:not(:checked)~.error-notification,
-#card15:checked~#card16:not(:checked)~#card3:not(:checked)~#card4:checked~.error-notification,
-#card15:checked~#card16:not(:checked)~#card5:checked~#card6:not(:checked)~.error-notification,
-#card15:checked~#card16:not(:checked)~#card5:not(:checked)~#card6:checked~.error-notification,
-#card15:checked~#card16:not(:checked)~#card7:checked~#card8:not(:checked)~.error-notification,
-#card15:checked~#card16:not(:checked)~#card7:not(:checked)~#card8:checked~.error-notification,
-#card15:checked~#card16:not(:checked)~#card9:checked~#card10:not(:checked)~.error-notification,
-#card15:checked~#card16:not(:checked)~#card9:not(:checked)~#card10:checked~.error-notification,
-#card15:checked~#card16:not(:checked)~#card11:checked~#card12:not(:checked)~.error-notification,
-#card15:checked~#card16:not(:checked)~#card11:not(:checked)~#card12:checked~.error-notification,
-#card15:checked~#card16:not(:checked)~#card13:checked~#card14:not(:checked)~.error-notification,
-#card15:checked~#card16:not(:checked)~#card13:not(:checked)~#card14:checked~.error-notification,
-
-/* card16 */
-#card15:not(:checked)~#card16:checked~#card1:checked~#card2:not(:checked)~.error-notification,
-#card15:not(:checked)~#card16:checked~#card1:not(:checked)~#card2:checked~.error-notification,
-#card15:not(:checked)~#card16:checked~#card3:checked~#card4:not(:checked)~.error-notification,
-#card15:not(:checked)~#card16:checked~#card3:not(:checked)~#card4:checked~.error-notification,
-#card15:not(:checked)~#card16:checked~#card5:checked~#card6:not(:checked)~.error-notification,
-#card15:not(:checked)~#card16:checked~#card5:not(:checked)~#card6:checked~.error-notification,
-#card15:not(:checked)~#card16:checked~#card7:checked~#card8:not(:checked)~.error-notification,
-#card15:not(:checked)~#card16:checked~#card7:not(:checked)~#card8:checked~.error-notification,
-#card15:not(:checked)~#card16:checked~#card9:checked~#card10:not(:checked)~.error-notification,
-#card15:not(:checked)~#card16:checked~#card9:not(:checked)~#card10:checked~.error-notification,
-#card15:not(:checked)~#card16:checked~#card11:checked~#card12:not(:checked)~.error-notification,
-#card15:not(:checked)~#card16:checked~#card11:not(:checked)~#card12:checked~.error-notification,
-#card15:not(:checked)~#card16:checked~#card13:checked~#card14:not(:checked)~.error-notification,
-#card15:not(:checked)~#card16:checked~#card13:not(:checked)~#card14:checked~.error-notification {
+#card13:not(:checked)~#card14:checked~#card15:not(:checked)~#card16:checked~.error-notification {
   display: flex;
   position: fixed;
 }
