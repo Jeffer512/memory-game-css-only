@@ -2,6 +2,8 @@
 
 This repository contains a technical implementation of a memory matching game built entirely with **HTML5 and CSS3**. The project serves as a demonstration of using the DOM as a state-driven database without the use of JavaScript.
 
+**Deployment:** https://jeffer512.github.io/memory-game-css-only/
+
 ## Project Origin
 This project was originally developed as a group assignment during a web development bootcamp. The original codebase was audited to remove redundant CSS selectors. Specifically, invalid general sibling combinators (~) attempting to target elements preceding the trigger in the DOM.
 
